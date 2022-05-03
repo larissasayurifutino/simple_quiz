@@ -4,10 +4,10 @@
     </head>
 
     <body>
-        <h1>Quem é a pessoa mais alta da turma?</h1>
+        <h1 id="titulo">Quem é a pessoa mais alta da turma?</h1>
 
         <ol>
-            <li onclick="alert('clicou')">Jéssica</li>
+            <li>Jéssica</li>
             <li>Karen</li>
             <li>Victor</li>
             <li>Talita</li>
@@ -19,7 +19,17 @@
         </div>
 
         <script>
-            alert('Yay')
+
+            function checarResposta(){
+                alert('Checando resposta')
+            }
+
+            let alternativa = document.querySelector('li') /*Declarar a variavel*/
+
+            alternativa.addEventListener('click', checarResposta)
+
+            console.log(nome)
+
         </script>
     </body>
 </html>
