@@ -8,7 +8,7 @@
 
         <ol>
             <li>Jéssica</li>
-            <li>Karen</li>
+            <li class="correct">Karen</li>
             <li>Victor</li>
             <li>Talita</li>
         </ol>    
@@ -21,7 +21,8 @@
         <script>
 
             function checarResposta(event){
-                if(console.log(this.textContext) == 'Karen')
+
+                if(this.classList.contains('correct'))
                     alert('Acertou')
                 else
                     alert('Errou')
