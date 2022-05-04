@@ -7,10 +7,10 @@
         <h1 id="titulo">Quem é a pessoa mais alta da turma?</h1>
 
         <ol>
-            <li onclick="checarResposta()">Jéssica</li>
-            <li onclick="checarResposta()">Karen</li>
-            <li onclick="checarResposta()">Victor</li>
-            <li onclick="checarResposta()">Talita</li>
+            <li>Jéssica</li>
+            <li>Karen</li>
+            <li>Victor</li>
+            <li>Talita</li>
         </ol>    
 
         <div class="answer">   
@@ -20,15 +20,18 @@
 
         <script>
 
-            function checarResposta(){
-                alert('Checando resposta')
+            function checarResposta(event){
+                if(console.log(this.textContext) == 'Karen')
+                    alert('Acertou')
+                else
+                    alert('Errou')
             }
 
-            let alternativa = document.querySelector('li') /*Declarar a variavel*/
+            let alternativas = document.querySelectorAll('li') 
 
-            alternativa.addEventListener('click', checarResposta)
-
-            console.log(nome)
+            for (let alternativa of alternativas){
+                alternativa.addEventListener('click', checarResposta)
+            }
 
         </script>
     </body>
