@@ -5,6 +5,9 @@
             .answer{
                 display: none;
             }
+            img{
+                display: none;
+            }
         </style>
     </head>
 
@@ -14,12 +17,12 @@
         <ol>
             <li>Jéssica</li>
             <li class="correct">Karen</li>
-            <li>Victor</li>
+            <li class="alternativa">Victor</li>
             <li>Talita</li>
         </ol>    
 
         <div class="answer" >   
-            
+            <img src="cat.gif">
             <p class="result"></p>
             <p>Nossa outlier no quesito altura é a Karen, com 1.80m.</p>
         </div>
@@ -30,13 +33,20 @@
 
             let answer = document.querySelector('.answer')
 
-            function checarResposta(event){
+            let image = document.querySelector('img')
 
-                let alternative = event.target
+
+            function checarResposta(e){
+                
+                let alternative = e.target
+
+                //console.log(alternative)
 
                 if(alternative.classList.contains('correct')){
                     // Trocar o texto do resultado
                     result.textContent = 'Acertou :)'
+                    // Mostrat gif
+                    image.style.display = 'initial'
                 }
 
 
