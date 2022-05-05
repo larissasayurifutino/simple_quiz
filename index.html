@@ -1,6 +1,11 @@
 <html>
     <head>
         <title>Quiz da Sala</title>
+        <style>
+            .answer{
+                display: none;
+            }
+        </style>
     </head>
 
     <body>
@@ -13,24 +18,46 @@
             <li>Talita</li>
         </ol>    
 
-        <div class="answer">   
-            <img src="cat.gif">
-            <p class="result">Acertou!</p>
+        <div class="answer" >   
+            
+            <p class="result"></p>
+            <p>Nossa outlier no quesito altura é a Karen, com 1.80m.</p>
         </div>
 
         <script>
 
+            let result = document.querySelector('.result')
+
+            let answer = document.querySelector('.answer')
+
             function checarResposta(event){
 
-                if(this.classList.contains('correct'))
-                    alert('Acertou')
-                else
-                    alert('Errou')
+                let alternative = event.target
+
+                if(alternative.classList.contains('correct')){
+                    // Trocar o texto do resultado
+                    result.textContent = 'Acertou :)'
+                }
+
+
+                else{
+                    // Trocar o texto do resultado
+                    result.textContent = 'Errou'
+                }
+
+
+                // Mostrar answer
+                // Sobescrevendo o display que estava escondido
+                answer.style.display = 'initial'
+
             }
 
+            // Seleciona todas as li
             let alternativas = document.querySelectorAll('li') 
 
+            // Para cada li
             for (let alternativa of alternativas){
+                // Ouça o evento de click e rode a função
                 alternativa.addEventListener('click', checarResposta)
             }
 
